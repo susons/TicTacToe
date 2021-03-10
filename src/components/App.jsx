@@ -32,7 +32,7 @@ export const App = () => {
   const checkHorizontal = (row, points = 0, combination = []) => {
     const { winPoints } = settings;
     board[row].forEach((r, i) => {
-      if (r === player) {
+      if (r === player && points !== winPoints) {
         points += 1;
         combination.push(`${row}${i}`);
       } else if (points !== winPoints) {
@@ -51,7 +51,7 @@ export const App = () => {
     if (points === winPoints) return { points, combination };
 
     for(let i = 0; i < rows; i++) {
-      if (board[i][column] === player) {
+      if (board[i][column] === player && points !== winPoints) {
         points += 1;
         combination.push(`${i}${column}`);
       } else if (points !== winPoints) {
@@ -79,7 +79,7 @@ export const App = () => {
     }
 
     while (true) {
-      if (tempRow === rows || tempCol === columns) break;
+      if (tempRow === rows || tempCol === columns || points === winPoints) break;
 
       if (board[tempRow][tempCol] === player) {
         points++;
@@ -112,7 +112,7 @@ export const App = () => {
     }
 
     while (true) {
-      if (tempRow === -1 || tempCol === columns) break;
+      if (tempRow === -1 || tempCol === columns || points === winPoints) break;
       if (board[tempRow][tempCol] === player) {
         points++;
         combination.push(`${tempRow}${tempCol}`);

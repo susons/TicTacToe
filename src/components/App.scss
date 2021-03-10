@@ -4,6 +4,8 @@
   background-color: bisque;
   width: 100%;
   height: 100vh;
+  max-width: 100vh;
+  overflow: hidden;
 
   .navigation {
     display: flex;

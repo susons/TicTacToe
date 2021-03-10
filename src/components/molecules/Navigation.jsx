@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button } from 'semantic-ui-react'
-import { Input } from './atoms/Input/Input'
+import { Button } from 'semantic-ui-react';
+import { Input } from '../atoms/Input/Input';
 
 export const Navigation = ({ onChange, settings, onGenerate }) => {
   return (

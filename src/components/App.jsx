@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Board } from './Board'
-import { Navigation } from './Navigation'
+import { Board } from './molecules/Board'
+import { Navigation } from './molecules/Navigation'
 import './App.scss'
 
 export const App = () => {
@@ -160,7 +160,7 @@ export const App = () => {
         onChange={handleInputChange}
         onGenerate={handleGenerateBoard}
       />
-      {victory && <h1 style={{ color: 'red', textAlign: 'center', flex: '0 0 100%'}}>You won Player {player}</h1>}
+      {victory && <h1 style={{ color: 'red', textAlign: 'center', flex: '0 0 100%'}}>VICTORY! Player "{player}" Won!</h1>}
       <Board
         combination={winCombination}
         victory={victory}

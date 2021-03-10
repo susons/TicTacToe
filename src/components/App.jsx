@@ -31,7 +31,7 @@ export const App = () => {
 
   const checkHorizontal = (row, points = 0, combination = []) => {
     const { winPoints } = settings;
-    board[row].map((r, i) => {
+    board[row].forEach((r, i) => {
       if (r === player) {
         points += 1;
         combination.push(`${row}${i}`);
